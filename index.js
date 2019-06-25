@@ -30,5 +30,8 @@ module.exports = {
   },
   setDefaultDevice (name) {
     return !impl.setDefaultDevice || impl.setDefaultDevice(name)
+  },
+  setCard (index) {
+    return !impl.setArgs || impl.setArgs('-c', index)
   }
 }

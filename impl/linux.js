@@ -1,7 +1,9 @@
 const execa = require('execa')
 
+let aArgs = []
+
 function amixer (...args) {
-  return execa.stdout('amixer', args, { preferLocal: false })
+  return execa.stdout('amixer', aArgs.concat(args), { preferLocal: false })
 }
 
 let defaultDeviceCache = null
@@ -57,4 +59,8 @@ module.exports.setMuted = function (val, cb) {
 
 module.exports.setDefaultDevice = function (name) {
   defaultDeviceCache = name
+}
+
+module.exports.setArgs = function (...args) {
+  aArgs = args
 }
