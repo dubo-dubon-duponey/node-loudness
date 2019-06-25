@@ -3,6 +3,8 @@ declare interface Loudness {
   getVolume(): Promise<number>
   setMuted(muted: boolean): Promise<void>
   setVolume(volume: number): Promise<void>
+  setDefaultDevice(name: string): boolean
+  setCard (index: number): boolean
 }
 
 declare const loudness: Loudness
