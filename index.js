@@ -27,5 +27,8 @@ module.exports = {
   },
   getMuted () {
     return impl.getMuted()
+  },
+  setDefaultDevice (name) {
+    return !impl.setDefaultDevice || impl.setDefaultDevice(name)
   }
 }

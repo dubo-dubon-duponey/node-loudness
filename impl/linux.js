@@ -54,3 +54,7 @@ module.exports.getMuted = function (cb) {
 module.exports.setMuted = function (val, cb) {
   return amixer('set', 'PCM', (val ? 'mute' : 'unmute')).then(() => undefined)
 }
+
+module.exports.setDefaultDevice = function (name) {
+  defaultDeviceCache = name
+}
